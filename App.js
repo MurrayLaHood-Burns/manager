@@ -1,13 +1,11 @@
 // @flow
 import React, { Component } from 'react';
-import { View } from 'react-native';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import firebase from 'firebase';
 import ReduxThunk from 'redux-thunk';
 import reducers from './src/reducers';
-import { MyStatusBar } from './src/components/common';
-import LoginForm from './src/components/LoginForm';
+import Router from './src/Router';
 
 export default class App extends Component {
  
@@ -28,10 +26,7 @@ export default class App extends Component {
 
     return (
       <Provider store={store}>
-        <View>
-          <MyStatusBar />
-          <LoginForm />
-        </View>
+        <Router />
       </Provider>
     );
   }
